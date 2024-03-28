@@ -1,6 +1,9 @@
 "use client";
 // Auth
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
+
+// Pages
+import Main from "../main/page";
 
 // Images
 import Image from "next/image";
@@ -11,7 +14,7 @@ import Github from "../../public/github.svg";
 export default function Login() {
   const { data, status } = useSession();
   return status !== "authenticated" ? (
-    <main className="flex min-h-screen justify-center overflow-hidden bg-gray-900">
+    <main className="flex min-h-screen justify-center overflow-hidden bg-black">
       <div className="flex flex-col justify-center items-center">
         <Image src={Logo} alt="logo" width={300} height={300} />
         <h1 className="sm:text-sm lg:text-3xl text-gray-300 font-bold">아침을 여는 사람들</h1>
@@ -24,7 +27,7 @@ export default function Login() {
         </button>
         <button
           onClick={() => signIn("github", { callbackUrl: "/" })}
-          className="relative flex justify-center items-center w-80 h-12 bg-black rounded mt-2 text-gray-300"
+          className="relative flex justify-center items-center w-80 h-12 bg-black rounded mt-2 text-gray-300 border-2"
         >
           <Image src={Github} alt="github" className="absolute top-1/2 left-4 -translate-y-1/2" />
           Github 로그인
@@ -32,6 +35,6 @@ export default function Login() {
       </div>
     </main>
   ) : (
-    <></>
+    <Main />
   );
 }
