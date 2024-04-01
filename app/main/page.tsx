@@ -28,7 +28,7 @@ export default function Main() {
               <div className="flex flex-col justify-center items-start">
                 <p className="text-sm font-bold text-gray-300">NAME</p>
                 <p className="text-xs text-gray-300">
-                  LOCATION • <span className="text-gray-500">몇분 전</span>
+                  LOCATION <span className="text-xss text-gray-500">몇분 전</span>
                 </p>
               </div>
             </div>
@@ -38,7 +38,9 @@ export default function Main() {
             </div>
             {/* 게시물 기능 468x40 */}
             <div className="flex flex-row gap-2 justify-start items-center w-full h-7 pl-2 pr-2">
-              <Image className="hover:cursor-pointer" src={HeartEmpty} alt="heart_empty" aria-label="좋아요" />
+              <div className="w-5 h-5">
+                <Image className="hover:cursor-pointer" src={HeartEmpty} alt="heart_empty" aria-label="좋아요" />
+              </div>
               <p className="text-sm font-bold text-gray-300">좋아요 0개</p>
             </div>
           </div>

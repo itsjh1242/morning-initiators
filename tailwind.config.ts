@@ -13,11 +13,14 @@ const config: Config = {
         "468": "468px",
       },
       maxWidth: {
-        "468": "468px"
+        "468": "468px",
       },
       // Custom Height
       height: {
         "585": "585px",
+      },
+      fontSize: {
+        xss: "10px",
       },
     },
   },
